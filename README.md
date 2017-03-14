@@ -1,7 +1,6 @@
-#≧◉◡◉≦
-# tutorialC++
---------------
-## Inlcudes:
+# ≧◉◡◉≦
+## tutorialC++
+### Inlcudes:
 - semantics of the cpp
 - what is compiler / IDE
 - variables / types of variables
