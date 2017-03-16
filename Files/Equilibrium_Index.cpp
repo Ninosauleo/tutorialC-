@@ -26,36 +26,32 @@ Idea:
 4) return -1 // If we come out of loop without returning then
              // there is no equilibrium index
  */
-int equilibrium(int arr[], int n)
-{
-    int sum = 0;      // initialize sum of whole array
-    int leftsum = 0; // initialize leftsum
+
+int solution(vector<int> &A) {
+    long long sum = 0;      // initialize sum of whole array, takes big big numbers
+    long long leftsum = 0; // initialize leftsum, takes big big numbers
     int i;
-
-    /* Find sum of the whole array */
-    for (i = 0; i < n; ++i)
-        sum += arr[i];
-
-    for( i = 0; i < n; ++i)
-    {
-        sum -= arr[i]; // sum is now right sum for index i
-
-        if(leftsum == sum)
-            return i;
-
-        leftsum += arr[i];
+    int n = A.size();
+    
+    cout << "Size of n " << n << endl;
+    if(&A == NULL || (A.size() > 100000)){ //checks that the size of the array is 100000
+        return -1;
     }
-
+    /* Find sum of the whole array first*/
+    for (i = 0; i < n; ++i){
+        sum += A[i];
+    }
+    
+    for( i = 0; i < n; ++i) {
+        sum -= A[i]; // sum is now right sum for index i, we take the first index so later we add it to sumLeft
+        
+        if(leftsum == sum){
+            
+            return i;
+        }
+        
+        leftsum += A[i];
+    }
     /* If no equilibrium index found, then return 0 */
     return -1;
-}
-
-int main()
-{
-    int arr[] = {-7, 1, 5, 2, -4, 3, 0};
-    int arr_size = sizeof(arr)/sizeof(arr[0]);
-    printf("First equilibrium index is %d\n", equilibrium(arr, arr_size));
-
-    getchar();
-    return 0;
 }
