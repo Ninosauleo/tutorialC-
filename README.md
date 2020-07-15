@@ -22,4 +22,7 @@
 - namespaces
 - exceptions
 
+
+my mom is learning programming!
+
 ## \ (•◡•) /
